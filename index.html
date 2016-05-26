@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>
+      FlexBook Examples
+    </title>
+    <!-- JQuery Scripts -->
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.datetimepicker.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/moment.min.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/fullcalendar-2.6.0.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/lang-all.js"></script>
+    <script type="text/javascript" src="http://www.flexbook.cz/jq/scheduler-1.2.0.js"></script>
+    <!-- FlexBook JavaScripts -->
+    <script type="text/javascript" src="http://www.flexbook.cz/flb.js"></script>
+    
+    <!-- JQuery CSS -->
+    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/fullcalendar-2.6.0.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/scheduler-1.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/jquery.datetimepicker.css" />
+
+    <!-- FlexBook CSS -->
+    <link rel="stylesheet" type="text/css" href="example.css" />
+  </head>
+  <body>
+    <h1>FlexBook Examples</h1>
+
+    <div id="flexbook_profil"></div>
+
+    <hr>
+    <h2>List of resources</h2>
+    <div id="flexbook_resource_list"></div>
+
+    <hr>
+    <h2>Resource with ID 7</h2>
+    <div id="flexbook_resource_calendar_1"></div>
+
+    <hr>
+    <h2>Resources with ID 7 and 10</h2>
+    <div id="flexbook_resource_calendar_2"></div>
+
+    <script>
+      flbInit('http://www.flexbook.cz/ajax.php',4);
+      flbProfile('flexbook_profil');
+      flbResourceList('flexbook_resource_list');
+      flbResourceCalendar('flexbook_resource_calendar_1', {
+	        resourceId: [7],
+		resourceLabel: 'Rezervace',
+		dateMin : '2016-05-26'
+      });
+      flbResourceCalendar('flexbook_resource_calendar_2', {
+	        resourceId: [7,10],
+		resourceLabel: 'Rezervace',
+      });
+    </script>
+  </body>
+</html>
+
