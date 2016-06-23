@@ -6,3 +6,23 @@ div.flb_button { margin-left: 10px; font-weight: bold; }
 div.flb_button:hover { cursor: pointer; }
 
 div#flexbook_resource_list { overflow : hidden; }
+
+button#flexbook_resource_calendar_1_editReservationResourceButtonSavePay {
+  display: none;
+}
+
+button#flexbook_resource_calendar_2_editReservationResourceButtonSavePay {
+  display: none;
+}
+
+button#flexbook_resource_list_editReservationResourceButtonSavePay {
+  display: none;
+}
+
+div.flb_resource_label_price span {
+  display: none;
+}
+
+div.flb_resource_label_price:after {
+  content: "Cena:";
+}
