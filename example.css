@@ -1,2 +1,8 @@
 H1 {color: blue;}
 
+div.flb_list div.flb_list_item div { float: left; }
+div.flb_list div.flb_list_item { clear: left; }
+div.flb_button { margin-left: 10px; font-weight: bold; }
+div.flb_button:hover { cursor: pointer; }
+
+div#flexbook_resource_list { overflow : hidden; }
