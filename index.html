@@ -36,6 +36,16 @@
     <div id="flexbook_resource_list"></div>
 
     <hr>
+    <h2>List of all events</h2>
+    <div id="flexbook_event_list"></div>
+    <br>
+
+    <hr>
+    <h2>List of events with tag 'package'</h2>
+    <div id="flexbook_event_list_packages"></div>
+    <br>
+
+    <hr>
     <h2>Resource with ID 7</h2>
     <div id="flexbook_resource_calendar_1"></div>
 
@@ -47,6 +57,8 @@
       flbInit('http://www.flexbook.cz/ajax.php',4);
       flbProfile('flexbook_profil');
       flbResourceList('flexbook_resource_list');
+      flbEventList('flexbook_event_list');
+      flbEventList('flexbook_event_list_packages',{tag: ['package']});
       flbResourceCalendar('flexbook_resource_calendar_1', {
 	        resourceId: [7],
 		resourceLabel: 'Rezervace',
