@@ -28,29 +28,80 @@
   </head>
   <body>
     <h1><a href="index.html">FlexBook Examples<a></h1>
+   <i> Simple examples of predefined FlexBook JavaScript components</i>
 
+    <hr>
+    <h2>User Profile</h2>
     <div id="flexbook_profil"></div>
 
     <hr>
-    <h2>List of resources</h2>
+    <form>
+	<input type="button" class="button_control" value="Expand All" onClick="
+	document.getElementById('flexbook_resource_list').style.display = 'block';
+	document.getElementById('flexbook_event_list').style.display = 'block';
+	document.getElementById('flexbook_event_list_packages').style.display = 'block';
+	document.getElementById('flexbook_resource_calendar_1').style.display = 'block';
+	document.getElementById('flexbook_resource_calendar_2').style.display = 'block';
+	">
+
+	<input type="button" class="button_control" value="Collapse All" onClick="
+	document.getElementById('flexbook_resource_list').style.display = 'none';
+	document.getElementById('flexbook_event_list').style.display = 'none';
+	document.getElementById('flexbook_event_list_packages').style.display = 'none';
+	document.getElementById('flexbook_resource_calendar_1').style.display = 'none';
+	document.getElementById('flexbook_resource_calendar_2').style.display = 'none';
+	">
+    </form>
+    <hr>
+    <h2>
+       List of all resources 
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_list').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_list').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
     <div id="flexbook_resource_list"></div>
 
     <hr>
-    <h2>List of all events</h2>
-    <div id="flexbook_event_list"></div>
+    <h2>
+       List of all events
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_event_list').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_event_list').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
+    <div id="flexbook_event_list" style="overflow-y:scroll; height:250px;"></div>
     <br>
 
     <hr>
-    <h2>List of events with tag 'package'</h2>
+    <h2>
+       List of events with tag 'package'
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_event_list_packages').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_event_list_packages').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
     <div id="flexbook_event_list_packages"></div>
     <br>
 
     <hr>
-    <h2>Resource with ID 7</h2>
+    <h2>
+       Calendar of resource with ID 7
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_1').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_1').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
     <div id="flexbook_resource_calendar_1"></div>
 
     <hr>
-    <h2>Resources with ID 7 and 10</h2>
+    <h2>
+       Calendar of resources with ID 7 and 10 focused to date 2016-11-02
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_2').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_2').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
     <div id="flexbook_resource_calendar_2"></div>
 
     <script>
@@ -62,9 +113,11 @@
       flbResourceCalendar('flexbook_resource_calendar_1', {
 	        resourceId: [7],
 		resourceLabel: 'Rezervace',
+                render: ['reservation','occupied','event'],
       });
       flbResourceCalendar('flexbook_resource_calendar_2', {
-	        resourceId: [7,10],
+	        resourceId: [577,578],
+		dateStart: '2016-11-02',
 		resourceLabel: 'Rezervace',
       });
 
