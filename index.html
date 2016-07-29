@@ -24,6 +24,9 @@
     <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/jquery.datetimepicker.css" />
 
     <!-- FlexBook CSS -->
+    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/flb.css" />
+
+    <!-- Integrator's custom CSS -->
     <link rel="stylesheet" type="text/css" href="example.css" />
   </head>
   <body>
@@ -42,6 +45,7 @@
 	document.getElementById('flexbook_event_list_packages').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'block';
+	document.getElementById('flexbook_resource_calendar_3').style.display = 'block';
 	">
 
 	<input type="button" class="button_control" value="Collapse All" onClick="
@@ -50,6 +54,7 @@
 	document.getElementById('flexbook_event_list_packages').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'none';
+	document.getElementById('flexbook_resource_calendar_3').style.display = 'none';
 	">
     </form>
     <hr>
@@ -104,23 +109,46 @@
     </h2>
     <div id="flexbook_resource_calendar_2"></div>
 
+    <hr>
+    <h2>
+       Vertical calendar of resources with ID 7 and 10 focused to date 2016-11-02
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_3').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_3').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
+    <div id="flexbook_resource_calendar_3"></div>
+
     <script>
       flbInit('http://www.flexbook.cz/ajax.php',4);
+
       flbProfile('flexbook_profil');
+
       flbResourceList('flexbook_resource_list');
+
       flbEventList('flexbook_event_list');
+
       flbEventList('flexbook_event_list_packages',{tag: ['package']});
+
       flbResourceCalendar('flexbook_resource_calendar_1', {
 	        resourceId: [7],
 		resourceLabel: 'Rezervace',
                 render: ['reservation','occupied','event'],
+		renderText: ['legend','name','description','price'],
       });
+
       flbResourceCalendar('flexbook_resource_calendar_2', {
 	        resourceId: [577,578],
 		dateStart: '2016-11-02',
 		resourceLabel: 'Rezervace',
       });
 
+      flbResourceCalendar('flexbook_resource_calendar_3', {
+	        resourceId: [577,578],
+		dateStart: '2016-11-02',
+		resourceLabel: 'Rezervace',
+		viewDirection : 'vertical',
+      });
     </script>
   </body>
 </html>

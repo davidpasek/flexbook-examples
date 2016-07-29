@@ -18,6 +18,9 @@ div.flb_button:hover { cursor: pointer; }
 
 div#flexbook_resource_list { overflow : hidden; }
 
+
+# How to hide buttons in FlexBook components
+#############################################
 button#flexbook_resource_calendar_1_editReservationResourceButtonSavePay {
   display: none;
 }
@@ -30,6 +33,8 @@ button#flexbook_resource_list_editReservationResourceButtonSavePay {
   display: none;
 }
 
+/* How to change text in FlexBook components
+############################################ */
 div.flb_resource_label_price span {
   display: none;
 }
@@ -37,3 +42,25 @@ div.flb_resource_label_price span {
 div.flb_resource_label_price:after {
   content: "Cena:";
 }
+
+/* How to change colors of objects in FLexBook calendar
+####################################################### */
+
+/* unavailability */
+div.flb_calendar .fc-bgevent {
+ background-color : LightGray;
+ color : black;
+}
+
+/* occupied by reservation */
+div.flb_calendar .event_reservation {
+ background-color : MediumPurple;
+ color : white;
+}
+
+/* event on resource */
+div.flb_calendar .event_providerEvent {
+ background-color : LightGreen;
+ color : black;
+}
+
