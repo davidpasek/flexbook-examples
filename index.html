@@ -101,7 +101,7 @@
 
     <hr>
     <h2>
-       Calendar of resources with ID 7 and 10 focused to date 2016-11-02
+       Calendar of resources with ID 577 and 578 focused to date 2016-11-02
        [ 
        <a href="" onClick="document.getElementById('flexbook_resource_calendar_2').style.display = 'block'; return false">+</a>
        <a href="" onClick="document.getElementById('flexbook_resource_calendar_2').style.display = 'none'; return false">-</a>
@@ -111,7 +111,7 @@
 
     <hr>
     <h2>
-       Vertical calendar of resources with ID 7 and 10 focused to date 2016-11-02
+       Vertical calendar of resources with ID 577 and 578 focused to date 2016-11-02
        [ 
        <a href="" onClick="document.getElementById('flexbook_resource_calendar_3').style.display = 'block'; return false">+</a>
        <a href="" onClick="document.getElementById('flexbook_resource_calendar_3').style.display = 'none'; return false">-</a>
@@ -132,7 +132,6 @@
 
       flbResourceCalendar('flexbook_resource_calendar_1', {
 	        resourceId: [7],
-		resourceLabel: 'Rezervace',
                 render: ['reservation','occupied','event'],
 		renderText: ['legend','name','description','price'],
       });
@@ -140,13 +139,14 @@
       flbResourceCalendar('flexbook_resource_calendar_2', {
 	        resourceId: [577,578],
 		dateStart: '2016-11-02',
-		resourceLabel: 'Rezervace',
+		resourceLabel: 'Stolky',
+		resourceWidth: 100,
+		slotWidth: 100,
       });
 
       flbResourceCalendar('flexbook_resource_calendar_3', {
 	        resourceId: [577,578],
 		dateStart: '2016-11-02',
-		resourceLabel: 'Rezervace',
 		viewDirection : 'vertical',
       });
     </script>

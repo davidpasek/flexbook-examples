@@ -48,8 +48,8 @@ div.flb_resource_label_price:after {
 
 /* unavailability */
 div.flb_calendar .fc-bgevent {
- background-color : LightGray;
- color : black;
+ background-color : Gray;
+ color : White !important;
 }
 
 /* occupied by reservation */
