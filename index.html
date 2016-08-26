@@ -122,7 +122,12 @@
     <script>
       flbInit('http://www.flexbook.cz/ajax.php',4);
 
-      flbProfile('flexbook_profil');
+      flbProfile('flexbook_profil', {
+        	language: 'en',
+		buttons: ['login','logout','profile','password','reservation','registration'],
+		checkAttributeMandatory: 1,
+                extraDiv: 1,
+      });
 
       flbResourceList('flexbook_resource_list');
 
