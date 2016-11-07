@@ -43,6 +43,7 @@
 	document.getElementById('flexbook_resource_list').style.display = 'block';
 	document.getElementById('flexbook_event_list').style.display = 'block';
 	document.getElementById('flexbook_event_list_packages').style.display = 'block';
+	document.getElementById('flexbook_resource_detail_1').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'block';
@@ -52,6 +53,7 @@
 	document.getElementById('flexbook_resource_list').style.display = 'none';
 	document.getElementById('flexbook_event_list').style.display = 'none';
 	document.getElementById('flexbook_event_list_packages').style.display = 'none';
+	document.getElementById('flexbook_resource_detail_1').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'none';
@@ -91,6 +93,16 @@
 
     <hr>
     <h2>
+       Resource detail of resource with ID 7
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_detail_1').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_detail_1').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
+    <div id="flexbook_resource_detail_1"></div>
+
+    <hr>
+    <h2>
        Calendar of resource with ID 7
        [ 
        <a href="" onClick="document.getElementById('flexbook_resource_calendar_1').style.display = 'block'; return false">+</a>
@@ -124,8 +136,9 @@
 
       flbProfile('flexbook_profil', {
         	language: 'en',
-		buttons: ['login','logout','profile','password','reservation','registration'],
+		buttons: ['login','logout','profile','password','reservation','registration','credit','sendPassword'],
 		checkAttributeMandatory: 1,
+		externalAccount: 1,
                 extraDiv: 1,
       });
 
@@ -134,6 +147,10 @@
       flbEventList('flexbook_event_list');
 
       flbEventList('flexbook_event_list_packages',{tag: ['package']});
+
+      flbResourceDetail('flexbook_resource_detail_1', {
+	        resourceId: 7,
+      });
 
       flbResourceCalendar('flexbook_resource_calendar_1', {
 	        resourceId: [7],
@@ -150,8 +167,8 @@
       });
 
       flbResourceCalendar('flexbook_resource_calendar_3', {
-	        resourceId: [577,578],
-		dateStart: '2016-11-02',
+	        resourceId: [7,535,10],
+                render: ['reservation','occupied','event'],
 		viewDirection : 'vertical',
       });
     </script>
