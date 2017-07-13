@@ -5,30 +5,10 @@
     <title>
       FlexBook Examples
     </title>
-    <!-- JQuery Scripts -->
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery-ui.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.datetimepicker.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/moment.min.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/fullcalendar-2.6.0.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/lang-all.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/scheduler-1.2.0.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.cookie.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/jquery.uploadfile.js"></script>
-    <script type="text/javascript" src="http://www.flexbook.cz/jq/intlTelInput.min.js"></script>
 
     <!-- FlexBook JavaScripts -->
-    <script type="text/javascript" src="http://www.flexbook.cz/flb.js"></script>
-    
-    <!-- JQuery CSS -->
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/fullcalendar-2.6.0.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/scheduler-1.2.0.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/jquery.datetimepicker.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/jq/intlTelInput.css" />
-
-    <!-- FlexBook CSS -->
-    <link rel="stylesheet" type="text/css" href="http://www.flexbook.cz/flb.css" />
+    <script src="http://www.flexbook.cz/jq/jquery.js"></script>
+    <script src="http://www.flexbook.cz/flbv2.js"></script>
 
     <!-- Integrator's custom CSS -->
     <link rel="stylesheet" type="text/css" href="example.css" />
@@ -39,7 +19,7 @@
 
     <hr>
     <h2>User Profile</h2>
-    <div id="flexbook_profil"></div>
+    <div id="flexbook_profile"></div>
 
     <hr>
     <form>
@@ -136,45 +116,81 @@
     <div id="flexbook_resource_calendar_3"></div>
 
     <script>
-      flbInit('http://www.flexbook.cz/ajax.php',4);
 
-      flbProfile('flexbook_profil', {
-        	language: 'en',
-		buttons: ['login','logout','profile','password','reservation','registration','credit','sendPassword'],
-		checkAttributeMandatory: 1,
-		externalAccount: 1,
-                extraDiv: 1,
-      });
+      flbInit('http://www.flexbook.cz/ajax.php',4, [
 
-      flbResourceList('flexbook_resource_list');
+             { 
+	       type: 'flbProfile',
+	       placeHolder: 'flexbook_profile',
+	       params: {
+			language: 'en',
+			buttons: ['login','logout','profile','password','reservation','registration','credit','sendPassword'],
+			checkAttributeMandatory: 1,
+			externalAccount: 1,
+			extraDiv: 1,
+		       },
+	     },
 
-      flbEventList('flexbook_event_list');
+	     { 
+	       type: 'flbResourceList',
+	       placeHolder: 'flexbook_resource_list',
+	     },
 
-      flbEventList('flexbook_event_list_packages',{tag: ['package']});
+	     { 
+	       type: 'flbEventList',
+	       placeHolder: 'flexbook_event_list',
+	     },
 
-      flbResourceDetail('flexbook_resource_detail_1', {
-	        resourceId: 7,
-      });
+	     { 
+	       type: 'flbEventList',
+	       placeHolder: 'flexbook_event_list_packages',
+	       params: {
+            		tag: ['package'],
+	               }
+	     },
 
-      flbResourceCalendar('flexbook_resource_calendar_1', {
-	        resourceId: [7],
-                render: ['reservation','occupied','event'],
-		renderText: ['legend','name','description','price'],
-      });
+	     { 
+	       type: 'flbResourceDetail',
+	       placeHolder: 'flexbook_resource_detail_1',
+	       params: {
+	        	resourceId: 7,
+	               }
+	     },
 
-      flbResourceCalendar('flexbook_resource_calendar_2', {
-	        resourceId: [577,578],
-		dateStart: '2016-11-02',
-		resourceLabel: 'Stolky',
-		resourceWidth: 100,
-		slotWidth: 100,
-      });
+	     { 
+	       type: 'flbResourceCalendar',
+	       placeHolder: 'flexbook_resource_calendar_1',
+	       params: {
+	        	resourceId: 7,
+			render: ['reservation','occupied','event'],
+			renderText: ['legend','name','description','price'],
+	               }
+	     },
 
-      flbResourceCalendar('flexbook_resource_calendar_3', {
-	        resourceId: [7,535,10],
-                render: ['reservation','occupied','event'],
-		viewDirection : 'vertical',
-      });
+	     { 
+	       type: 'flbResourceCalendar',
+	       placeHolder: 'flexbook_resource_calendar_2',
+	       params: {
+			resourceId: [577,578],
+			dateStart: '2016-11-02',
+			resourceLabel: 'Stolky',
+			resourceWidth: 100,
+			slotWidth: 100,
+	               }
+	     },
+
+	     { 
+	       type: 'flbResourceCalendar',
+	       placeHolder: 'flexbook_resource_calendar_3',
+	       params: {
+			resourceId: [7,535,10],
+			render: ['reservation','occupied','event'],
+			viewDirection : 'vertical',
+	               }
+	     },
+
+      ]);
+
     </script>
   </body>
 </html>
