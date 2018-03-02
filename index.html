@@ -31,6 +31,7 @@
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'block';
+	document.getElementById('flexbook_resource_calendar_4').style.display = 'block';
 	">
 
 	<input type="button" class="button_control" value="Collapse All" onClick="
@@ -41,6 +42,7 @@
 	document.getElementById('flexbook_resource_calendar_1').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_2').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'none';
+	document.getElementById('flexbook_resource_calendar_4').style.display = 'none';
 	">
     </form>
     <hr>
@@ -115,6 +117,16 @@
     </h2>
     <div id="flexbook_resource_calendar_3"></div>
 
+    <hr>
+    <h2>
+       Event calendar of actions taged with tag "kalendar"
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_4').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_resource_calendar_4').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
+    <div id="flexbook_resource_calendar_4"></div>
+
     <script>
 
       flbInit('http://www.flexbook.cz/ajax.php',4, [
@@ -188,6 +200,15 @@
 			viewDirection : 'vertical',
 	               }
 	     },
+
+	     { 
+	       type: 'flbEventCalendar',
+	       placeHolder: 'flexbook_resource_calendar_4',
+	       params: {
+            		tag: ['kalendar'],
+			dateStart: '2018-05-01',
+	               }
+	     }
 
       ]);
 
