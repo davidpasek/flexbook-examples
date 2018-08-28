@@ -68,7 +68,7 @@
 
     <hr>
     <h2>
-       List of events with tag 'package'
+       List of events with tag 'package' - parameter renderText has all available attributes which are displayed in the event detail
        [ 
        <a href="" onClick="document.getElementById('flexbook_event_list_packages').style.display = 'block'; return false">+</a>
        <a href="" onClick="document.getElementById('flexbook_event_list_packages').style.display = 'none'; return false">-</a>
@@ -158,6 +158,7 @@
 	       placeHolder: 'flexbook_event_list_packages',
 	       params: {
             		tag: ['package'],
+			renderText: ['name', 'center', 'start', 'end', 'description', 'organiser', 'price', 'places', 'attendees', 'reservation', 'repeat_start', 'resource'],
 	               }
 	     },
 
