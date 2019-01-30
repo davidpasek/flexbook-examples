@@ -19,14 +19,14 @@
 
     <hr style='clear:both'>
     <div id="user_profile">
-      <h2>User Profile</h2>
-      <div id="flexbook_profile"></div>
+	<div id="user_profile_label"><b>User Profile</b></div>
+        <div id="flexbook_profile"></div>
     </div>
 
 
     <hr style='clear:both'>
     <form>
-	<input type="button" class="button_control" value="Expand All" onClick="
+	<input type="button" class="flb_button" value="Expand All" onClick="
 	document.getElementById('flexbook_resource_list').style.display = 'block';
 	document.getElementById('flexbook_event_list').style.display = 'block';
 	document.getElementById('flexbook_event_list_packages').style.display = 'block';
@@ -38,7 +38,7 @@
 	document.getElementById('flexbook_resource_availability_1').style.display = 'block';
 	">
 
-	<input type="button" class="button_control" value="Collapse All" onClick="
+	<input type="button" class="flb_button" value="Collapse All" onClick="
 	document.getElementById('flexbook_resource_list').style.display = 'none';
 	document.getElementById('flexbook_event_list').style.display = 'none';
 	document.getElementById('flexbook_event_list_packages').style.display = 'none';
