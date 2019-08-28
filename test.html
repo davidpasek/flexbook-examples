@@ -36,6 +36,7 @@
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'block';
 	document.getElementById('flexbook_resource_calendar_4').style.display = 'block';
 	document.getElementById('flexbook_resource_availability_1').style.display = 'block';
+	document.getElementById('flexbook_EventWeekList_1').style.display = 'block';
 	">
 
 	<input type="button" class="flb_button" value="Collapse All" onClick="
@@ -48,6 +49,7 @@
 	document.getElementById('flexbook_resource_calendar_3').style.display = 'none';
 	document.getElementById('flexbook_resource_calendar_4').style.display = 'none';
 	document.getElementById('flexbook_resource_availability_1').style.display = 'none';
+	document.getElementById('flexbook_EventWeekList_1').style.display = 'none';
 	">
     </form>
     <hr style='clear:both'>
@@ -140,7 +142,18 @@
        <a href="" onClick="document.getElementById('flexbook_resource_availability_1').style.display = 'none'; return false">-</a>
        ]
     </h2>
+
     <div id="flexbook_resource_availability_1"></div>
+
+    <hr style='clear:both'>
+    <h2>
+        Event list in Week view - flbEventWeekList
+       [ 
+       <a href="" onClick="document.getElementById('flexbook_EventWeekList_1').style.display = 'block'; return false">+</a>
+       <a href="" onClick="document.getElementById('flexbook_EventWeekList_1').style.display = 'none'; return false">-</a>
+       ]
+    </h2>
+    <div id="flexbook_EventWeekList_1"></div>
     <p>&nbsp;
     <p>&nbsp;
     <p>&nbsp;
@@ -247,6 +260,14 @@
 	               }
 	     },
 
+	     { 
+	       type: 'flbEventWeekList',
+	       placeHolder: 'flexbook_EventWeekList_1',
+	       params: {
+                         dateStart: '2019-09-02', 
+                         noEventTemplate: 'Tento den nic nepořádáme.',
+	               }
+	     },
       ]);
 
     </script>
